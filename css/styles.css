@@ -34,11 +34,11 @@ h3 {
 }
 
 .highlight-number {
-    color: green;
+    color: red;
 }
 
 #header {
-    background-color: red;
+    background-color: green;
     color: white;
     font-size: 4em;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
@@ -48,7 +48,7 @@ h3 {
     flex-grow: 1;
     text-align: center;
     padding: 20px;
-    border-top: 2px solid red;
+    border-top: 2px solid green;
 }
 ul {
     list-style: none;
