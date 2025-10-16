@@ -117,12 +117,40 @@ a:hover {
     margin-top: 2rem;
 }
 
+/* BLOG POSTS PAGE STYLING */
 .blog-posts {
-    background-color: #222;
-    padding: 2rem;
-    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    color: #ccc;
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+}
+
+.blog-posts article {
+    background-color: #222;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    border: 1px solid #333;
+}
+
+.blog-posts h3 a {
+    color: #EB6123;
+    text-decoration: none;
+}
+
+.blog-posts h3 a:hover {
+    text-decoration: underline;
+}
+
+.blog-posts p {
+    color: #ddd;
+    line-height: 1.6;
 }
 
 /* FOOTER */
