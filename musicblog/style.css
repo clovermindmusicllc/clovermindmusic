@@ -131,6 +131,20 @@ a:hover {
     margin-top: 2rem;
 }
 
+/* BLOG THUMBNAILS */
+.post-thumb {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-thumb:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 10px #EB6123;
+}
+
 /* BLOG POSTS PAGE STYLING */
 .blog-posts {
     display: flex;
