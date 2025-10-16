@@ -153,6 +153,60 @@ a:hover {
     line-height: 1.6;
 }
 
+/* INDIVIDUAL BLOG POST PAGE */
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 4rem 1rem;
+}
+
+.text-container {
+    max-width: 800px;
+    background-color: #222;
+    border-radius: 10px;
+    padding: 2rem;
+    color: #ddd;
+    text-align: left; /* keep reading natural */
+    line-height: 1.8;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* Center images nicely */
+.text-container img {
+    display: block;
+    margin: 2rem auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Optional: style article headers & links */
+.text-container h1 {
+    text-align: center;
+    color: #EB6123;
+    margin-bottom: 1.5rem;
+}
+
+.text-container a {
+    color: #EB6123;
+    text-decoration: none;
+}
+
+.text-container a:hover {
+    text-decoration: underline;
+}
+
+/* Optional spacing for publish date */
+.text-container time {
+    display: block;
+    margin-top: 2rem;
+    text-align: right;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+
 /* FOOTER */
 footer {
     text-align: center;
