@@ -15,6 +15,7 @@ h1, h2, h3 {
 a {
     text-decoration: none;
     color: #fff;
+    transition: color 0.3s;
 }
 
 a:hover {
@@ -45,6 +46,20 @@ a:hover {
 .hero p {
     font-size: 1.2rem;
     color: #ccc;
+}
+
+/* MOBILE RESPONSIVENESS FOR HERO */
+@media (max-width: 768px) {
+    .hero {
+        height: 50vh;
+        background-position: center top;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
 }
 
 /* NAVIGATION */
