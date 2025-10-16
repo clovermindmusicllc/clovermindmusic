@@ -48,7 +48,7 @@ h3 {
     flex-grow: 1;
     text-align: center;
     padding: 20px;
-    border-top: 2px solid red;
+    border-top: 2px solid green;
 }
 ul {
     list-style: none;
