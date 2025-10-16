@@ -30,7 +30,7 @@ h3 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 5px solid red;
+    border: 5px solid green;
 }
 
 .highlight-number {
@@ -74,14 +74,10 @@ a:hover {
     text-decoration: underline;
 }
 
-.spotify-embed {
-    border-top: 2px solid red;
-    border-bottom: 2px solid red;
-}
 
 #footer {
-    background-color: red;
+    background-color: green;
     color: white;
     padding: 20px;
-    border: 5px solid red;
+    border: 5px solid green;
 }
