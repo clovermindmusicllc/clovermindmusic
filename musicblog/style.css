@@ -47,6 +47,20 @@ a:hover {
     color: #ccc;
 }
 
+/* MOBILE RESPONSIVENESS FOR HERO */
+@media (max-width: 768px) {
+    .hero {
+        height: 50vh;
+        background-position: center top;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
 /* NAVIGATION */
 .navbar {
     background-color: #000;
