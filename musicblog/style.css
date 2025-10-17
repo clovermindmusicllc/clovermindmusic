@@ -25,7 +25,7 @@ a:hover {
 
 /* HEADER / HERO */
 .hero {
-    background: url('Webhead.png') no-repeat center center/cover;
+    background: url('WebHeadOrb.png') no-repeat center center/cover;
     height: 70vh;
     position: relative;
     display: flex;
