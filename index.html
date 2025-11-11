@@ -85,28 +85,76 @@
 
     <!-- Radio -->
     <section class="radio">
-    <h2> Clovermind Radio</h2>
-    <div class="audio-player">
-      <p>🔊 Streaming from the Clovermind Radio Server: <span id="currentSong">Loading...</span></p>
-            <audio id="liveAudio" controls>
-                <source src="https://radio.darthcrios.net/stream" type="audio/mpeg"> Your browser does not support the audio tag.</audio>
-                  <script>
-        // Fetch current song metadata from Icecast
-        function updateSongInfo() {
-            fetch("https://radio.darthcrios.net/status-json.xsl")
-                .then(response => response.json())
-                .then(data => {
-                    let song = data.icestats.source.title || "Unknown Track";
-                    document.getElementById("currentSong").textContent = song;
-                })
-                .catch(() => {
-                    document.getElementById("currentSong").textContent = "Error fetching song info";
-                });
-        }
-        setInterval(updateSongInfo, 5000); // Update every 5 seconds
-        updateSongInfo(); // Initial load
-    </script>
+  <h2>Clovermind Radio</h2>
+
+  <div class="audio-player">
+    <div class="artwork-wrapper">
+      <img id="albumArt" src="images/clovermind-logo.png" alt="Album Art" />
     </div>
+
+    <p>
+      🔊 Streaming from the Clovermind Radio Server:
+      <span id="currentSong">Loading...</span>
+    </p>
+
+    <p class="listeners">👥 Listeners: <span id="listenerCount">0</span></p>
+
+    <audio id="liveAudio" controls preload="none">
+      <source src="https://radio.darthcrios.net/stream" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <script>
+    const fallbackArt = "images/clovermind-logo.png"; // ← your default logo path
+
+    function updateSongInfo() {
+      fetch("https://radio.darthcrios.net/status-json.xsl")
+        .then(response => response.json())
+        .then(data => {
+          let source = data.icestats.source;
+          let song = "Unknown Track";
+          let listeners = 0;
+          let artUrl = fallbackArt;
+
+          // Handle array or single source object
+          if (Array.isArray(source) && source.length) {
+            song = source[0].title || song;
+            listeners = source[0].listeners || 0;
+            if (source[0].albumart) artUrl = source[0].albumart;
+          } else if (source && source.title) {
+            song = source.title;
+            listeners = source.listeners || 0;
+            if (source.albumart) artUrl = source.albumart;
+          }
+
+          // Update song title
+          const songEl = document.getElementById("currentSong");
+          if (songEl.textContent !== song) {
+            songEl.style.opacity = "0.4";
+            setTimeout(() => {
+              songEl.textContent = song;
+              songEl.style.opacity = "1";
+            }, 250);
+          }
+
+          // Update listeners
+          document.getElementById("listenerCount").textContent = listeners;
+
+          // Update artwork (with fallback)
+          const artEl = document.getElementById("albumArt");
+          artEl.src = artUrl || fallbackArt;
+        })
+        .catch(err => {
+          document.getElementById("currentSong").textContent = "Error fetching song info";
+          console.error("Radio metadata fetch error:", err);
+        });
+    }
+
+    // Refresh every 5 seconds
+    setInterval(updateSongInfo, 5000);
+    updateSongInfo();
+  </script>
 </section>
 
     <!-- FOOTER -->
