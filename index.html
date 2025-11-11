@@ -83,6 +83,32 @@
         </div>
     </section>
 
+    <!-- Radio -->
+    <section class="radio">
+    <h2> Clovermind Radio</h2>
+    <div class="audio-player">
+      <p>🔊 Streaming from the Clovermind Radio Server: <span id="currentSong">Loading...</span></p>
+            <audio id="liveAudio" controls>
+                <source src="https://radio.darthcrios.net/stream" type="audio/mpeg"> Your browser does not support the audio tag.</audio>
+                  <script>
+        // Fetch current song metadata from Icecast
+        function updateSongInfo() {
+            fetch("https://radio.darthcrios.net/status-json.xsl")
+                .then(response => response.json())
+                .then(data => {
+                    let song = data.icestats.source.title || "Unknown Track";
+                    document.getElementById("currentSong").textContent = song;
+                })
+                .catch(() => {
+                    document.getElementById("currentSong").textContent = "Error fetching song info";
+                });
+        }
+        setInterval(updateSongInfo, 5000); // Update every 5 seconds
+        updateSongInfo(); // Initial load
+    </script>
+    </div>
+</section>
+
     <!-- FOOTER -->
     <footer>
         <p>© 2025 Clovermind Music | All Rights Reserved</p>

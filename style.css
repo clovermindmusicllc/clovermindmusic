@@ -285,6 +285,13 @@ a:hover {
   }
 }
 
+.audio-player {
+  margin-top: 2rem;
+  border-top: 1px solid #a259ff;
+  padding-top: 1rem;
+  color: #e60000;
+}
+
 
 /* FOOTER */
 footer {
