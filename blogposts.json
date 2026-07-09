@@ -29,5 +29,37 @@
         "summary": "Here's a blog by Críos about some of the portable gear they own and use everyday.",
         "url": "musicblog/post1.html",
         "thumbnail": "Website Images/portablegear.jpg"
+    },
+
+    {
+        "title": "Guitar for Wizards One",
+        "date": "2026-07-08",
+        "summary": "Guitar insights from the Wizard Críos",
+        "url": "musicblog/htpguitar1.html",
+        "thumbnail": "blogimages/GFW.jpg"
+    },
+
+    {
+        "title": "Songwriting",
+        "date": "2025-11-11",
+        "summary": "Songwriting insights from Matt Murphy",
+        "url": "musicblog/post3.html",
+        "thumbnail": "Website Images/Songwriting.jpg"
+    },
+
+    {
+        "title": "Home Studios",
+        "date": "2025-10-16",
+        "summary": "So you were wondering about Home Studios?",
+        "url": "musicblog/post2.html",
+        "thumbnail": "Website Images/HomeStudios.png"
+    },
+
+    {
+        "title": "Portable Gear",
+        "date": "2025-10-16",
+        "summary": "Here's a blog by Críos about some of the portable gear they own and use everyday.",
+        "url": "musicblog/post1.html",
+        "thumbnail": "Website Images/portablegear.jpg"
     }
 ] 
